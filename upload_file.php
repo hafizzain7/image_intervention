@@ -43,7 +43,8 @@ $con = mysqli_connect("localhost", "root", "", "image_upload");
 
     $file_tmp=$_FILES['img']['tmp_name'];
     $file_type=$_FILES['img']['type'];
-    $dest_file='media/'.$file_name;
+    $date = date('Y_m_d-H-i-s');
+    $dest_file='media/'.$date.$file_name;
   
     move_uploaded_file($file_tmp,$dest_file);
     try {
